@@ -16,11 +16,11 @@ function App() {
 
   const [nav, setNav] = useState(true);
   const [userLoginInfo, setUserLoginInfo] = useState({})
-  const [imgUrl, setImgUrl] = useState('');
+  const [formData, setFormData] = useState({});
   return (
     <Router>
       <ContextElement.Provider
-        value={[nav, setNav, userLoginInfo, setUserLoginInfo, imgUrl, setImgUrl]}
+        value={[nav, setNav, userLoginInfo, setUserLoginInfo, formData, setFormData]}
       >
         {nav ? <NavBar /> : <AdminPanel />}
         <Switch>
@@ -33,7 +33,7 @@ function App() {
           <Route path="/event">
             <Event />
           </Route>
-          <PrivateRoute path="/volunteerRegister/:title">
+          <PrivateRoute path="/volunteerRegister">
             <VolunteerRegister />
           </PrivateRoute>
           <PrivateRoute path="/myEvents">

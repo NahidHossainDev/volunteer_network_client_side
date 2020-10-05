@@ -4,8 +4,8 @@ import { Button } from '@material-ui/core';
 
 const MyEvents = () => {
 const [nav, setNav,userLoginInfo, setUserLoginInfo] = useContext(ContextElement);
-    const [event, setEvent] = useState([]);
-
+  const [event, setEvent] = useState([]);
+  
    const loadData = () => {
         fetch("https://intense-beyond-19958.herokuapp.com/getMyEvents?email="+userLoginInfo.email)
             .then(res => res.json())
@@ -23,9 +23,10 @@ const [nav, setNav,userLoginInfo, setUserLoginInfo] = useContext(ContextElement)
     return (
       <div className="myEvents">
         <h2>My events</h2>
-        <div className = "events">
+        <div className="events">
           {event.map((e, i) => (
             <div key={i} className="form">
+              <img src={e.imgURL} alt="eventImage" style={{ width: "300px" }} />
               <h3>{e.eventTitle}</h3>
               <p>{new Date(e.date).toDateString("dd/MM/yyyy")}</p>
               <Button

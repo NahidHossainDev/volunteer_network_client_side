@@ -11,9 +11,16 @@ import { useForm } from 'react-hook-form';
 import { ContextElement } from '../../App';
 
 const VolunteerRegister = () => {
-  const [nav, setNav, userLoginInfo, setUserLoginInfo, imgUrl] = useContext(ContextElement);
+  const [
+    nav,
+    setNav,
+    userLoginInfo,
+    setUserLoginInfo,
+    formData,
+    setFormData,
+  ] = useContext(ContextElement);
   
-  const { title } = useParams();
+  // const { title } = useParams();
 
   const history = useHistory();
   const redirect = () => {
@@ -27,7 +34,7 @@ const VolunteerRegister = () => {
   
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        const allData = { ...data, date: selectedDate , imgURL: imgUrl}
+        const allData = { ...data, date: selectedDate , imgURL: formData.imgUrl}
         console.log(allData)
          fetch("https://intense-beyond-19958.herokuapp.com/addRegisteredData", {
            method: "POST",
@@ -95,7 +102,7 @@ const VolunteerRegister = () => {
           <TextField
             placeholder="Event Title"
             name="eventTitle"
-            defaultValue={title}
+            defaultValue={formData.title}
             className="inputField"
             inputRef={register}
           ></TextField>
