@@ -8,7 +8,7 @@ const [nav, setNav,userLoginInfo, setUserLoginInfo] = useContext(ContextElement)
   
    const loadData = () => {
         fetch("https://intense-beyond-19958.herokuapp.com/getMyEvents?email="+userLoginInfo.email)
-            .then(res => res.json())
+        .then(res => res.json())
         .then(data => setEvent(data))
     }
     loadData();

@@ -19,7 +19,6 @@ const ShowEventDetail = (props) => {
   
   
     return (
-      // <Link to={"/volunteerRegister/" + title}>
         <Card className="card" onClick={redirect} >
           <CardMedia>
             <img src={img} alt="EventPicture" style={{ width: "100%" }} />
@@ -27,7 +26,6 @@ const ShowEventDetail = (props) => {
             <p>{eventDetail}</p>
           </CardMedia>
         </Card>
-      // </Link>
     );
 };
 

@@ -3,7 +3,6 @@ import { ContextElement } from '../../App';
 import { Button } from '@material-ui/core';
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
-import fakeData  from '../../fakeData';
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,

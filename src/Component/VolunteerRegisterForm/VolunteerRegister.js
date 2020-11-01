@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { TextField, Button } from '@material-ui/core';
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
@@ -20,8 +20,6 @@ const VolunteerRegister = () => {
     setFormData,
   ] = useContext(ContextElement);
   
-  // const { title } = useParams();
-
   const history = useHistory();
   const redirect = () => {
     history.push("/myEvents");
@@ -49,7 +47,6 @@ const VolunteerRegister = () => {
                redirect();
              }
            });
-      
     };
 
     return (
